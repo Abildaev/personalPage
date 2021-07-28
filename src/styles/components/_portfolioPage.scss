@@ -1,0 +1,55 @@
+.portfolio-page {
+  
+  &__img-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    background-color: $whiteColor;
+    color: $secondColor;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid $borderColor;
+
+    &:after {
+      content: '';
+      transition: ease-out 0.3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $borderColor;
+    }
+
+    &:hover {
+      border: 1px solid $mainColor;
+      color: $secondColor;
+
+      &:after {
+        width: 100%;
+        background: $mainColor;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+  }
+
+  & h5 {
+    color: $titleColor;
+    margin-bottom: rem(25px);
+   
+  }
+}
+
+.portfolio-page__img-detail {
+  background-color: #fff;
+  max-width: 360px;
+  display: flex;
+  justify-content: center;
+}

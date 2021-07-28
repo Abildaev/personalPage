@@ -1,0 +1,208 @@
+.menu {
+  transition: ease-out 0.2s;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: rem(310px);
+  @include lg {
+    max-width: rem(280px);
+  }
+  @include sm {
+    max-width: rem(50px);
+  }
+  &-close {
+    max-width: rem(80px);
+    @include md {
+      max-width: rem(60px);
+    }
+    @include sm {
+      max-width: rem(50px);
+    }
+  }
+  
+  &__fixed {
+    transition: ease-out 0.2s;
+    position: fixed;
+    width: 100%;
+    max-width: rem(310px);
+    @include lg {
+      max-width: rem(280px);
+    }
+    &-close {
+      max-width: rem(80px);
+      @include md {
+        max-width: rem(60px);
+      }
+      @include xs {
+        max-width: rem(50px);
+      }
+    }
+  }
+
+  &__wrap {
+    transition: ease-out 0.2s;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: $secondColor;
+    overflow: hidden;
+    overflow-y: auto;
+    &-close {
+      justify-content: flex-start;
+    }
+  }
+  
+  &__socnets {
+    padding: rem(60px) 0 0;
+    transition: ease-out 0.3s;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+  }
+  &__socnet{
+    transition: ease-out 0.3s;
+    width: rem(35px);
+    height: rem(35px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $whiteColor;
+    border-radius: 50%;
+    color: $secondColor;
+    margin-right: rem(30px);
+    @include md {
+      width: rem(30px);
+      height: rem(30px);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      background-color: $mainColor;
+      color: $whiteColor;
+    }
+  }
+  &__links {
+    padding: rem(30px) 0;
+    &-close {
+      padding: rem(100px) 0 0;
+      @include sm {
+        padding: rem(80px) 0 0;
+      }
+    }
+  }
+  
+
+  &__link {
+    transition: ease-out 0.3s;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;
+    color: $notActiveColor;
+    font-size: rem(18px);
+    padding: rem(20px) 0;
+    box-sizing: border-box;
+    @include md {
+      font-size: rem(16px);
+      padding: rem(15px) 0;
+    }
+    &.active {
+      color: $whiteColor;
+      background-color: $mainColor;
+      &:hover {
+        color: $whiteColor;
+        background-color: rgba($mainColor, 1);
+      }
+    }
+    &:hover {
+      color: $mainColor;
+      background-color: rgba($mainColor, 0.4);
+    }
+    &-close {
+      transition: ease-out 0.1s;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+      height: rem(80px);  
+      @include md {
+        height: rem(60px);
+      } 
+      &.active {
+        & .menu__icon {
+          font-size: rem(32px);
+          @include lg {
+            font-size: rem(28px);
+          } 
+          @include xs {
+            font-size: rem(26px);
+          } 
+        }
+      }
+      &:hover {
+        & .menu__icon {
+          font-size: rem(32px);
+          @include lg {
+            font-size: rem(28px);
+          }
+          @include xs {
+            font-size: rem(26px);
+          } 
+        }
+      }
+    }
+  }
+  &__icon {
+    transition: ease-out 0.1s;
+    font-size: rem(26px);
+    @include lg {
+      font-size: rem(24px);
+    }
+    @include xs {
+      font-size: rem(22px);
+    }
+    
+  }
+  &__button {
+    transition: ease-out 0.2s;
+    cursor: pointer;
+    position: absolute;
+    right: rem(-24px);
+    bottom: rem(40px);
+    background-color: $mainColor;
+    border: none;
+    width: rem(35px);
+    height: rem(35px);
+    color: $whiteColor;
+
+    
+    
+    &:hover {
+      background-color: $whiteColor;
+      color: $secondColor
+    }
+    & i {
+      transition: 0.5s;
+      display: inline-block;  
+    }
+    &-close {
+      & i {   
+        transform: rotate(180deg);
+      }
+    }
+    
+  }
+  &__copyright {
+    text-align: center;
+    color: $copyrightColor;
+    font-size: rem(14px);
+  }
+}
+

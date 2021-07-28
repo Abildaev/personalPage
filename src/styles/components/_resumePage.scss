@@ -1,0 +1,169 @@
+.resume-page {
+  box-sizing: border-box;
+  padding: rem(100px) 0;
+  width: 100%;
+
+  &__skills {
+    margin-bottom: rem(100px);
+  }
+
+  &__skill {
+    margin-bottom: rem(60px);
+
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+
+    @include md {
+      &:nth-last-child(2) {
+        margin-bottom: rem(60px);
+      }
+    }
+
+  }
+
+
+  &__progress {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: rem(15px);
+
+    &-title {
+      font-family: $secondFont;
+      font-size: rem(18px);
+      color: $titleColor;
+
+      @include sm {
+        font-size: rem(16px);
+      }
+    }
+
+    &-percent {
+      font-family: $secondFont;
+      font-size: rem(18px);
+      color: $subtitleColor;
+      font-weight: 300;
+
+      @include sm {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  &__progress-container {
+    position: relative;
+    width: 100%;
+    height: rem(6px);
+    background-color: $secondColor;
+  }
+
+  &__progress-inner {
+    display: inline-block;
+    transition: all 1s cubic-bezier(.01, .57, .68, 1.05) 0s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $mainColor;
+  }
+
+  &__resume-margin {
+    @include md {
+      margin-bottom: rem(60px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__resume-title {
+    color: $titleColor;
+    display: inline-flex;
+    align-items: flex-end;
+    margin-bottom: rem(30px);
+
+    & h5 {
+      text-transform: capitalize;
+      font-size: rem(24px);
+
+      @include sm {
+        font-size: rem(22px);
+        ;
+      }
+    }
+  }
+
+  &__resume-timeline {
+    width: 100%;
+    padding: rem(35px);
+    box-sizing: border-box;
+    background-color: $secondColor;
+    border: 1px solid $borderColor;
+
+
+    @include sm {
+      padding: rem(25px);
+    }
+  }
+
+  &__resume-item {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: -7px;
+      top: rem(19px);
+      width: rem(15px);
+      height: rem(15px);
+      background-color: $mainColor;
+      border-radius: 50%;
+
+      @include sm {
+        left: -6px;
+        top: rem(7px);
+        width: rem(13px);
+        height: rem(13px);
+      }
+    }
+
+  }
+
+  &__resume-content {
+    padding: rem(15px) 0 rem(35px) rem(35px);
+    border-left: 1px solid $mainColor;
+
+    @include sm {
+      padding: rem(5px) 0 rem(25px) rem(25px);
+    }
+
+    & h6 {
+      font-size: rem(18px);
+      color: $titleColor;
+      font-weight: 400;
+      margin-bottom: rem(15px);
+      text-transform: capitalize;
+
+      @include sm {
+        font-size: rem(17px);
+      }
+    }
+
+    & span {
+      display: inline-block;
+      color: $subtitleColor;
+      font-family: $secondFont;
+      font-weight: 300;
+      margin-bottom: rem(20px);
+    }
+
+    & p {
+      color: $subtitleColor;
+      line-height: rem(30px);
+    }
+  }
+}
